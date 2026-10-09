@@ -302,3 +302,25 @@ body { background: var(--bg); color: var(--text); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+
+/* No-purple correction: neutral research-lab palette */
+:root {
+  --bg: #f1eee6;
+  --panel: #e9e5dc;
+  --panel-2: #ded9cf;
+  --text: #171715;
+  --muted: #69675f;
+  --line: rgba(23,23,21,.22);
+  --purple: #171715;
+  --purple-soft: #171715;
+}
+.brand em, .hero h1 span, h2 span, .eyebrow, .card-number,
+.project-index, .arrow, .tag, .morph-line-last { color: var(--text); }
+.brand-mark { border-color: var(--text); color: var(--text); }
+.hero-glow { display: none; }
+.live-mark, .signal-dot { background: var(--text); box-shadow: none; }
+.library-panel { background: var(--panel); }
+.book-a { background: #d8d4ca; }
+.book-b { background: #c9c5bb; }
+.book-c { background: #b9b5ab; }
