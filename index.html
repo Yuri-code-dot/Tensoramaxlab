@@ -89,6 +89,24 @@ h2{margin:0;font-size:clamp(34px,6vw,70px);line-height:.94;letter-spacing:-.075e
 .project-description{margin:6px 0 0;color:var(--muted);font-size:11px}
 .project-type{color:var(--muted);font:9px var(--mono);text-transform:uppercase;letter-spacing:.05em}
 .project-arrow{font:19px var(--mono);text-align:right}
+
+.code-feature{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(240px,.9fr);border:1px solid var(--line-strong);background:linear-gradient(135deg,rgba(210,118,85,.055),transparent 48%)}
+.code-feature-main{padding:clamp(24px,5vw,52px)}
+.code-feature-kicker{display:flex;align-items:center;gap:9px;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.code-feature-kicker i{width:7px;height:7px;border-radius:50%;background:var(--signal);display:inline-block}
+.code-feature h2{margin:26px 0 17px;font:clamp(34px,6.5vw,76px)/.9 var(--mono);letter-spacing:-.09em;overflow-wrap:anywhere}
+.code-feature h2 span{color:var(--signal)}
+.code-feature-lead{max-width:540px;margin:0;color:var(--ink);font-size:clamp(16px,2vw,21px);line-height:1.45}
+.code-feature-note{max-width:520px;margin:18px 0 0;color:var(--muted);font-size:12px}
+.code-feature-side{border-left:1px solid var(--line-strong);display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+.code-terminal-head{padding:13px 16px;border-bottom:1px solid var(--line);font:9px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);display:flex;justify-content:space-between;gap:12px}
+.code-terminal-body{padding:24px 18px;font:11px/2 var(--mono);color:var(--muted);overflow-wrap:anywhere}
+.code-terminal-body p{margin:0}
+.code-terminal-body .prompt{color:var(--signal)}
+.code-terminal-body .bright{color:var(--ink)}
+.code-feature-status{padding:14px 16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;font:9px var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.code-feature-status strong{color:var(--signal);font-weight:400}
+
 .archive{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line-strong)}
 .archive-copy{padding:clamp(22px,5vw,46px)}
 .archive-copy h2{margin-top:25px;font-size:clamp(31px,5vw,56px)}
@@ -124,6 +142,7 @@ h2{margin:0;font-size:clamp(34px,6vw,70px);line-height:.94;letter-spacing:-.075e
  .manifesto-grid,.about-grid,.closing{grid-template-columns:1fr;gap:20px}
  .research-card{min-height:225px;padding-right:14px}.research-card+.research-card{padding-left:14px}
  .project-row{grid-template-columns:30px minmax(0,1fr) 22px;gap:10px}.project-type{display:none}
+ .code-feature{grid-template-columns:1fr}.code-feature-side{border-left:0;border-top:1px solid var(--line-strong)}
  .archive{grid-template-columns:1fr}.archive-art{border-left:0;border-top:1px solid var(--line-strong);min-height:295px}
  .principles{grid-template-columns:repeat(2,1fr)}.principle:nth-child(3){border-left:0;padding-left:0;border-top:1px solid var(--line)}.principle:nth-child(4){border-top:1px solid var(--line)}
 }
@@ -144,7 +163,7 @@ h2{margin:0;font-size:clamp(34px,6vw,70px);line-height:.94;letter-spacing:-.075e
 <header><div class="shell header-inner">
   <a class="brand" href="#top" aria-label="TensoraMax Lab home"><span class="brand-symbol">T/</span><span>TensoraMax Lab<small>Independent research studio</small></span></a>
   <button class="menu" aria-label="Toggle navigation" aria-expanded="false">MENU +</button>
-  <nav class="nav" aria-label="Main navigation"><a href="#research">Research</a><a href="#projects">Projects</a><a href="#archive">Archive</a><a href="#about">About</a><a class="nav-github" href="https://github.com/Yuri-code-dot/Tensoramaxlab" target="_blank" rel="noreferrer">GitHub ↗</a></nav>
+  <nav class="nav" aria-label="Main navigation"><a href="#research">Research</a><a href="#projects">Projects</a><a href="#tensora-code">Tensora Code</a><a href="#archive">Archive</a><a href="#about">About</a><a class="nav-github" href="https://github.com/Yuri-code-dot/Tensoramaxlab" target="_blank" rel="noreferrer">GitHub ↗</a></nav>
 </div></header>
 <main id="top">
 <section class="hero shell">
@@ -188,7 +207,31 @@ h2{margin:0;font-size:clamp(34px,6vw,70px);line-height:.94;letter-spacing:-.075e
     <a class="project-row" href="#archive"><span class="project-index">02</span><div><h3 class="project-name">Kaken</h3><p class="project-description">An image-to-art playground for ASCII, Braille, Unicode, pixels, and more.</p></div><span class="project-type">VISUAL TOOL</span><span class="project-arrow">↘</span></a>
     <a class="project-row" href="#archive"><span class="project-index">03</span><div><h3 class="project-name">English Literature Library</h3><p class="project-description">A digital reading space for literary works and curious minds.</p></div><span class="project-type">DIGITAL ARCHIVE</span><span class="project-arrow">↘</span></a>
     <a class="project-row" href="#research"><span class="project-index">04</span><div><h3 class="project-name">Model experiments</h3><p class="project-description">Small models, datasets, and practical tests documented as they develop.</p></div><span class="project-type">AI RESEARCH</span><span class="project-arrow">↘</span></a>
-    <a class="project-row" href="#projects"><span class="project-index">05</span><div><h3 class="project-name">Tensora Code</h3><p class="project-description">A terminal-inspired coding assistant interface experiment. Upcoming.</p></div><span class="project-type">UPCOMING</span><span class="project-arrow">↗</span></a>
+    <a class="project-row" href="#tensora-code"><span class="project-index">05</span><div><h3 class="project-name">Tensora Code</h3><p class="project-description">A terminal-inspired coding assistant interface experiment. Upcoming.</p></div><span class="project-type">UPCOMING</span><span class="project-arrow">↗</span></a>
+  </div>
+</div></section>
+
+
+<section class="section" id="tensora-code"><div class="shell">
+  <div class="section-head reveal"><div class="section-id">04 / In development</div><h2>Meet Tensora Code.</h2><p class="section-intro">A new tool taking shape inside TensoraMax Lab.</p></div>
+  <div class="code-feature reveal">
+    <div class="code-feature-main">
+      <div class="code-feature-kicker"><i></i> TensoraMax Lab / Upcoming project</div>
+      <h2>TENSORA<br><span>CODE_</span></h2>
+      <p class="code-feature-lead">A terminal-inspired coding assistant concept, designed around the feeling of working directly with a tool—not just chatting with a box.</p>
+      <p class="code-feature-note">The interface experiment is in development. This page is an introduction, not a live demo: capabilities and integrations will be described when they are ready.</p>
+    </div>
+    <div class="code-feature-side" aria-label="Tensora Code project notes">
+      <div class="code-terminal-head"><span>PROJECT / TC-001</span><span>LAB NOTES</span></div>
+      <div class="code-terminal-body">
+        <p><span class="prompt">›</span> <span class="bright">project</span> = "Tensora Code"</p>
+        <p><span class="prompt">›</span> direction = "terminal-inspired"</p>
+        <p><span class="prompt">›</span> focus = "coding workflow"</p>
+        <p><span class="prompt">›</span> status = <span class="bright">"in development"</span></p>
+        <p><span class="prompt">›</span> next = "build, test, refine"</p>
+      </div>
+      <div class="code-feature-status"><span>Current status</span><strong>● Upcoming</strong></div>
+    </div>
   </div>
 </div></section>
 
