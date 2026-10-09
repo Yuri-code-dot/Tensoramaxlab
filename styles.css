@@ -194,3 +194,111 @@ h2 { font-size: clamp(40px, 6vw, 76px); line-height: .98; letter-spacing: -.06em
   .project-row h3 { font-size: 18px; }
   .project-row p { font-size: 12px; }
 }
+
+
+/* TensoraMax Lab — editorial research-lab rework */
+:root {
+  --bg: #f1eee6;
+  --panel: #e9e5dc;
+  --panel-2: #ded9cf;
+  --text: #171715;
+  --muted: #69675f;
+  --line: rgba(23,23,21,.22);
+  --purple: #7650a8;
+  --purple-soft: #7650a8;
+  --max: 1180px;
+}
+html { background: var(--bg); scroll-padding-top: 80px; }
+body { background: var(--bg); color: var(--text); }
+.noise { opacity: .025; mix-blend-mode: multiply; }
+.site-header {
+  background: rgba(241,238,230,.9);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+.brand-mark { border-color: var(--purple); color: var(--purple); border-radius: 2px; }
+.brand em, .hero h1 span, h2 span, .eyebrow, .card-number, .project-index, .arrow { color: var(--purple-soft); }
+.nav { color: var(--muted); }
+.nav-cta { border-radius: 2px; border-color: var(--line); }
+.hero {
+  min-height: 82svh;
+  padding-top: clamp(76px, 11vh, 130px);
+  padding-bottom: 64px;
+  border-bottom: 1px solid var(--line);
+}
+.hero-glow {
+  width: 360px; height: 360px; right: -130px; top: 16%;
+  background: radial-gradient(circle, rgba(118,80,168,.09), transparent 70%);
+  filter: none;
+}
+.eyebrow { display: flex; align-items: center; gap: 9px; color: var(--muted); }
+.live-mark { display: inline-block; width: 7px; height: 7px; background: var(--purple); border-radius: 50%; }
+.morph-stage {
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+  margin: 8px 0 12px;
+  padding: clamp(24px, 5vw, 58px) 0 clamp(20px, 4vw, 42px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.morph-noise {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: flex-start;
+  margin: 0; color: var(--text); opacity: .055;
+  font: 500 clamp(12px, 2vw, 20px)/1.6 "DM Mono", monospace;
+  letter-spacing: .12em; white-space: pre-wrap; overflow-wrap: anywhere;
+  pointer-events: none; user-select: none;
+}
+.morph-title {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: flex-start;
+  max-width: 100%;
+  margin: 0;
+  font: 500 clamp(44px, 10.4vw, 128px)/.83 "DM Mono", ui-monospace, monospace;
+  letter-spacing: -.085em;
+  overflow-wrap: anywhere;
+}
+.morph-line { display: block; min-height: 1em; }
+.morph-line-last { margin-top: .12em; color: var(--purple); }
+.morph-caption {
+  display: block; margin-top: 28px; color: var(--muted);
+  font: 11px/1.5 "DM Mono", monospace; letter-spacing: .16em;
+}
+.hero-copy { color: var(--muted); max-width: 590px; }
+.button { border-radius: 2px; }
+.button.primary { background: var(--text); color: var(--bg); }
+.button.secondary { border-radius: 2px; border-color: var(--line); }
+.signal { color: var(--muted); }
+.signal-dot { background: var(--purple); box-shadow: none; }
+.signal-line { background: var(--line); }
+.section { border-color: var(--line); }
+.card { background: var(--bg); min-height: 280px; transition: background .18s, transform .18s; }
+.card:hover { background: var(--panel); transform: translateY(-2px); }
+.cards { background: var(--line); border-color: var(--line); gap: 1px; }
+.card h3 { letter-spacing: -.035em; }
+.tag { color: var(--purple); }
+.project-row:hover { background: rgba(23,23,21,.035); }
+.library-panel {
+  background: var(--panel);
+  border-color: var(--line);
+}
+.book { border-color: rgba(23,23,21,.2); box-shadow: 12px 18px 35px rgba(23,23,21,.08); }
+.book-a { background: #d8d0df; }
+.book-b { background: #dcd8cf; }
+.book-c { background: #c9c2d2; }
+.principles span { border-radius: 2px; border-color: var(--line); }
+.footer { border-color: var(--line); }
+.closing { border-color: var(--line); }
+@media (max-width: 760px) {
+  .nav { background: var(--bg); border-color: var(--line); border-radius: 2px; }
+  .hero { min-height: 78svh; }
+  .morph-title { font-size: clamp(39px, 10.8vw, 76px); letter-spacing: -.09em; }
+  .morph-stage { padding: 34px 0 25px; }
+  .morph-caption { font-size: 9px; letter-spacing: .1em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
